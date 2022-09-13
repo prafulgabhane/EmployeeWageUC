@@ -19,8 +19,6 @@ namespace EmployeeWageUC
             Console.WriteLine("Random Value:" + empCheck);
 
             // condition check if else
-            // testing comment line
-
 
             if (empPresent == empCheck)
                 Console.WriteLine("Employee is Present");
