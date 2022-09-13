@@ -10,23 +10,32 @@ namespace EmployeeWageUC
     {
         static void Main(string[] args)
         {
-            int empPresent = 1;
+            //constant declaration
+            int IS_FULL_TIME = 1;
+            int EMP_RATE_PER_HOUR = 20;
 
-            // generating random value
+            //variable declaration
+            int empHrs = 0;
+            int empWage = 0;
 
             Random random = new Random();
             int empCheck = random.Next(0, 2);
-            Console.WriteLine("Random Value:" + empCheck);
 
-            // condition check if else
-            // testing comment line
-
-            if (empPresent == empCheck)
-                Console.WriteLine("Employee is Present");
+            if (empCheck == IS_FULL_TIME)
+            {
+                empHrs = 8;
+            }
 
             else
-                Console.WriteLine("Employee is Absent");
-                Console.ReadLine();
+            {
+                empHrs = 0;
+            }
+            empWage = empHrs * EMP_RATE_PER_HOUR;
+            //formula for understanding
+            Console.WriteLine("Emp Wage: " + empWage);
+            Console.WriteLine("empHour: [{1}] X empRatePerHour [{2}] = empWage: [{0}]", empWage, empHrs, EMP_RATE_PER_HOUR);
+
+            Console.ReadLine();
         }
     }
 }
