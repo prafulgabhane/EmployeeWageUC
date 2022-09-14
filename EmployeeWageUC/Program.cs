@@ -8,32 +8,40 @@ namespace EmployeeWageUC
 {
     internal class Program
     {
+        //constant declaration
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
+        public const int EMP_RATE_PER_HOUR = 20;
+        public const int NUM_OF_WORKING_DAYS = 2;
         static void Main(string[] args)
         {
-            //constant declaration
-            int IS_FULL_TIME = 1;
-            int EMP_RATE_PER_HOUR = 20;
-
             //variable declaration
-            int empHrs = 0;
-            int empWage = 0;
-
-            Random random = new Random();
-            int empCheck = random.Next(0, 2);
-
-            if (empCheck == IS_FULL_TIME)
+            int empHrs = 0, empWage = 0, totalEmpWage = 0;
+            for (int day = 1; day <= NUM_OF_WORKING_DAYS; day++)
             {
-                empHrs = 8;
-            }
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
 
-            else
-            {
-                empHrs = 0;
-            }
-            empWage = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Emp Wage: " + empWage);
-            Console.WriteLine("empHour: [{1}] X empRatePerHour [{2}] = empWage: [{0}]", empWage, empHrs, EMP_RATE_PER_HOUR);
+                switch (empCheck)
+                {
+                    case IS_PART_TIME:
+                        empHrs = 4;
+                        break;
 
+                    case IS_FULL_TIME:
+                        empHrs = 8;
+                        break;
+
+                    default:
+                        empHrs = 0;
+                        break;
+
+                }
+                empWage = empHrs * EMP_RATE_PER_HOUR;
+                totalEmpWage += empWage;
+                Console.WriteLine("Day {1}: Employee Wage: {0} ", empWage,day);
+            }
+            Console.WriteLine("Total: Employee Wage: " + totalEmpWage);
             Console.ReadLine();
         }
     }
