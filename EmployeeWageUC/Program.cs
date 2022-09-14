@@ -13,7 +13,7 @@ namespace EmployeeWageUC
             //constant declaration
             int IS_FULL_TIME = 1;
             int EMP_RATE_PER_HOUR = 20;
-            
+
             //variable declaration
             int empHrs = 0;
             int empWage = 0;
@@ -31,7 +31,10 @@ namespace EmployeeWageUC
                 empHrs = 0;
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Emp Wage: "+empWage);
+            //formula for understanding
+            Console.WriteLine("Emp Wage: " + empWage);
+            Console.WriteLine("empHour: [{1}] X empRatePerHour [{2}] = empWage: [{0}]", empWage, empHrs, EMP_RATE_PER_HOUR);
+
             Console.ReadLine();
         }
     }
