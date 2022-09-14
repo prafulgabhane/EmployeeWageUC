@@ -8,13 +8,12 @@ namespace EmployeeWageUC
 {
     internal class Program
     {
+        //constant declaration
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
+        public const int EMP_RATE_PER_HOUR = 20;
         static void Main(string[] args)
         {
-            //constant declaration
-            int IS_PART_TIME = 1;
-            int IS_FULL_TIME = 2;
-            int EMP_RATE_PER_HOUR = 20;
-
             //variable declaration
             int empHrs = 0;
             int empWage = 0;
@@ -24,29 +23,27 @@ namespace EmployeeWageUC
 
             Console.Write("Employee Type: ");
 
+            switch (empCheck)
+            {
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    Console.WriteLine("Part Time");
+                    break;
 
-            if (empCheck == IS_PART_TIME)
-            {
-                empHrs = 4;
-                Console.WriteLine("Part Time");
-            }
-            else if (empCheck == IS_FULL_TIME)
-            {
-                empHrs = 8;
-                Console.WriteLine("Full Time");
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    Console.WriteLine("Full Time");
+                    break;
 
-            }
-            else
-            {
-                empHrs = 0;
-                Console.WriteLine("Abscent");
+                default:
+                    empHrs = 0;
+                    break;
 
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
-            //formula for understanding
             Console.WriteLine("Emp Wage: " + empWage);
+            //formula for understanding
             Console.WriteLine("empHour: [{1}] X empRatePerHour [{2}] = empWage: [{0}]", empWage, empHrs, EMP_RATE_PER_HOUR);
-
             Console.ReadLine();
         }
     }
