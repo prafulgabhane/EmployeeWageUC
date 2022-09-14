@@ -31,7 +31,6 @@ namespace EmployeeWageUC
                 empHrs = 0;
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
-            //formula for understanding
             Console.WriteLine("Emp Wage: " + empWage);
             Console.WriteLine("empHour: [{1}] X empRatePerHour [{2}] = empWage: [{0}]", empWage, empHrs, EMP_RATE_PER_HOUR);
 
