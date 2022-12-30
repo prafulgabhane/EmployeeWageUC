@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
-using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +13,8 @@ namespace EmployeeWageUC
     {
         //constant declaration
         public const int IS_PART_TIME = 1;
-        public const int IS_FULL_TIME = 2; 
+        public const int IS_FULL_TIME = 2;
+
       
         public static int computeEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
