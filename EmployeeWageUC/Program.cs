@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageUC
 {
-    internal class Program
+    internal class Program 
     {
         //constant declaration
         public const int IS_PART_TIME = 1;
